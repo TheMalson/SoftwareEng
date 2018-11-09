@@ -62,6 +62,6 @@ public abstract class Car implements ICar{
 
 
 
-        return hash
+        return hash;
     }
 }
