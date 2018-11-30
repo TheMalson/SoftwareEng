@@ -1,6 +1,6 @@
 package exercise9;
 
-public class Customer {
+public class Customer implements Comparable{
 
     private int customerId;
     private String name;
@@ -20,5 +20,15 @@ public class Customer {
     }
 
 
-
+    @Override
+    public int compareTo(Object o) {
+        Customer c = (Customer) o;
+        if(customerId==c.getCustomerId()){
+            return 0;
+        } else if(customerId<c.getCustomerId()){
+            return -1;
+        }else {
+            return 1;
+        }
+    }
 }

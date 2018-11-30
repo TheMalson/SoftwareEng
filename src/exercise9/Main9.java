@@ -1,6 +1,6 @@
 package exercise9;
 
-import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.HashMap;
 
 public class Main9 {
@@ -8,12 +8,14 @@ public class Main9 {
         BankSystem bs = new BankSystem();
 
         Customer c1 = bs.createCustomer(1,"Erster Kunde");
-        Customer c2 = bs.createCustomer(2,"Zweiter Kunde");
+        Customer c2 = bs.createCustomer(4,"Zweiter Kunde");
         Customer c3 = bs.createCustomer(3,"Dritter Kunde");
+        Customer c4 = bs.createCustomer(2,"Vierter Kunde");
 
         bs.createAccount(c1.getCustomerId(), 200.00);
         bs.createAccount(c2.getCustomerId(), 12.22);
         bs.createAccount(c3.getCustomerId(), 32.22);
+        bs.createAccount(c4.getCustomerId(), 500.60);
 
         printCustomers(bs);
 
@@ -27,7 +29,7 @@ public class Main9 {
 
     public static void printCustomers (BankSystem bs){
 
-        ArrayList<Customer> customerList = bs.getCustomerList();
+        TreeSet<Customer> customerList = bs.getCustomerList();
         HashMap<Integer,Account> hmCustomerAccount = bs.getHmCustomerAccount();
 
         for(Customer c : customerList){

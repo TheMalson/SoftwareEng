@@ -1,16 +1,16 @@
 package exercise9;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 
 public class BankSystem {
 
     private HashMap<Integer,Account> hmCustomerAccount;
-    private ArrayList<Customer> customerList;
+    private TreeSet<Customer> customerList;
 
     public BankSystem() {
-        customerList = new ArrayList<Customer>();
+        customerList = new TreeSet<Customer>();
         hmCustomerAccount = new HashMap<Integer,Account>();
     }
 
@@ -19,7 +19,7 @@ public class BankSystem {
     }
 
 
-    public ArrayList<Customer> getCustomerList() {
+    public TreeSet<Customer> getCustomerList() {
         return customerList;
     }
 
