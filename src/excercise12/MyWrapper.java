@@ -20,6 +20,9 @@ public class MyWrapper implements IDatabaseWrapper {
 
         try {
             db = new UnreliableDatabase(filename);
+            System.out.println("-------------------------------------------------------------");
+            System.out.println("Datei erfolgreich geladen");
+            System.out.println("");
         } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
             System.out.println("Die Datei " + filename + " konnte nicht gefunden werden");
@@ -28,9 +31,6 @@ public class MyWrapper implements IDatabaseWrapper {
             String newFilename = s.next();
             wrap(newFilename);
             s.close();
-        }finally {
-            System.out.println("Datei erfolgreich geladen");
-            System.out.println("");
         }
 
     }
@@ -44,6 +44,8 @@ public class MyWrapper implements IDatabaseWrapper {
 
         try{
             db.saveString(key,value);
+            System.out.println("Speichern erfolgreich");
+            System.out.println("");
         }
         catch (IOException ioexception){
             System.out.println(ioexception.getMessage());
@@ -56,10 +58,7 @@ public class MyWrapper implements IDatabaseWrapper {
             count++;
             this.saveString(key,value);
         }
-        finally {
-            System.out.println("Speichern erfolgreich");
-            System.out.println("");
-        }
+
 
     }
 
@@ -72,6 +71,8 @@ public class MyWrapper implements IDatabaseWrapper {
 
         try{
            db.loadString(key);
+           System.out.println("Laden erfolgreich");
+           System.out.println("-------------------------------------------------------------");
         }
         catch (IOException ioexception){
             System.out.println(ioexception.getMessage());
@@ -84,9 +85,7 @@ public class MyWrapper implements IDatabaseWrapper {
             count++;
             this.loadString(key);
         }
-        finally {
-            System.out.println("Laden erfolgreich");
-        }
+
         return Optional.empty();
     }
 }

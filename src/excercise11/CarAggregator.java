@@ -175,10 +175,7 @@ public class CarAggregator {
      */
     private List<String> getAllColorsStream(final List<Car> cars) {
         List<String> colorList = cars.stream()
-                .map(e -> {
-                    String color = e.getColor();
-                    return color;
-                })
+                .map(e -> e.getColor())
                 .distinct()
                 .collect(Collectors.toList());
 

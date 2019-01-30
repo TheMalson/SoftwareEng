@@ -6,7 +6,7 @@ public class Main12 {
 
         //Aufgabe 1
 
-        MyWrapper wrapper = new MyWrapper("textfile.txt");
+        MyWrapper wrapper = new MyWrapper("TestText.txt");
 
         try {
             wrapper.saveString(2, "TestText1");
@@ -14,8 +14,11 @@ public class Main12 {
         }
 
         //Aufgabe 2
+
         catch (MyDatabaseException e){
-            e.getMessage();
+            System.out.println("");
+            System.out.println(e.getMessage());
+            System.out.println("-------------------------------------------------------------");
         }
 
 

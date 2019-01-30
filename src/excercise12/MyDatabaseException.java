@@ -8,6 +8,6 @@ public class MyDatabaseException extends Exception{
 
     @Override
     public String getMessage(){
-        return "Jetzt geht gar nix mehr";
+        return "!!!!!!!!!!!Jetzt geht gar nix mehr!!!!!!!!!!!!";
     }
 }
